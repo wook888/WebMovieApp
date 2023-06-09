@@ -1,20 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
+import "./css/App.css";
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path={process.env.PUBLIC_URL + "/movie/:id"}>
-          <Detail />
-        </Route>
-        <Route exact path={process.env.PUBLIC_URL + "/"}>
-          <Home />
-        </Route>
-        <Route path={process.env.PUBLIC_URL + "/search/:search"}></Route>
-      </Switch>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<Detail />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

@@ -1,18 +1,43 @@
-import React from "react";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useCallback, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import "../css/Detail.css";
+
 function Detail() {
   const { id } = useParams();
-  const getMovie = async () => {
-    const json = await (
-      await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
-    ).json();
+  const [movie, setMovie] = useState({});
+
+  const getMovie = useCallback(async () => {
+    const response = await fetch(
+      `https://yts.mx/api/v2/movie_details.json?movie_id=${id}`
+    );
+    const json = await response.json();
+    const data = json.data.movie;
+    setMovie(data);
     console.log(json);
-  };
+  }, [id]);
+
   useEffect(() => {
-    getMovie();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return <h1>Detail</h1>;
+    const fetchData = async () => {
+      await getMovie();
+    };
+    fetchData();
+  }, [getMovie]);
+
+  return (
+    <div className="detail-container">
+      <div className="background"></div>
+      <div className="content">
+        <h1 className="title">{movie.title_long}</h1>
+        <div className="genre">Genre: {movie.genres}</div>
+        <div className="rating">Movie rating ⭐️ {movie.rating}</div>
+        <div className="description">{movie.description_full}</div>
+        <img src={movie.large_cover_image} alt="" className="cover-image" />
+        <Link to="/" className="go-back-link">
+          Go Back
+        </Link>
+      </div>
+    </div>
+  );
 }
+
 export default Detail;
