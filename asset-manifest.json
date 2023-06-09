@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/webmovieapp/static/css/main.ba7a9cbb.css",
-    "main.js": "/webmovieapp/static/js/main.b15c3860.js",
+    "main.js": "/webmovieapp/static/js/main.4aae06ef.js",
     "index.html": "/webmovieapp/index.html",
     "main.ba7a9cbb.css.map": "/webmovieapp/static/css/main.ba7a9cbb.css.map",
-    "main.b15c3860.js.map": "/webmovieapp/static/js/main.b15c3860.js.map"
+    "main.4aae06ef.js.map": "/webmovieapp/static/js/main.4aae06ef.js.map"
   },
   "entrypoints": [
     "static/css/main.ba7a9cbb.css",
-    "static/js/main.b15c3860.js"
+    "static/js/main.4aae06ef.js"
   ]
 }
