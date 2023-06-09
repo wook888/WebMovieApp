@@ -5,7 +5,7 @@ import Home from "./routes/Home";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Route path="/hello" element={<h1>Hello</h1>} />
       <Route path="/movie/:id" element={<Detail />} />
       <Route path="/" element={<Home />} />
