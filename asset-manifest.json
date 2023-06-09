@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/makemoviepage/static/css/main.31d6cfe0.css",
-    "main.js": "/makemoviepage/static/js/main.d22fadda.js",
-    "index.html": "/makemoviepage/index.html",
-    "main.d22fadda.js.map": "/makemoviepage/static/js/main.d22fadda.js.map"
+    "main.css": "/webmovieapp/static/css/main.31d6cfe0.css",
+    "main.js": "/webmovieapp/static/js/main.d22fadda.js",
+    "index.html": "/webmovieapp/index.html",
+    "main.d22fadda.js.map": "/webmovieapp/static/js/main.d22fadda.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
