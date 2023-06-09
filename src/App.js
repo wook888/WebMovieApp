@@ -6,7 +6,7 @@ import "./css/App.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/webmovieapp">
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
