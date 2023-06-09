@@ -1,71 +1,64 @@
-# Getting Started with Create React App
+React JS 를 처음 접하고 이 라이브러리가 무엇인지 알아보기 위해 검색해보고 알게 된 기본적인 개념 정리를 해보려고 합니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React JS는 페이스북에서 개발했으며, 사용자 인터페이스(User Interface)를 구축하기 위한 유연한 JavaScript 라이브러리입니다.
 
-## Available Scripts
+흔히 우리가 자주 보는 Instagram, facebook 같은 사이트의 `***새로고침이 없이 변경 `\*\*\*되는 모습, 마치 앱처럼 보이는 동적인 웹 페이지 SPA(Single Page Application), CSR(Client Side Rendering)의를 사용한 페이지라고 할 수 있습니다.
 
-In the project directory, you can run:
+## 리액트를 사용 하는 이유
 
-### `npm start`
+- Virtual DOM의 존재
+- React Native의 앱 개발 가능
+- 수 많은 커뮤니티
+- 컴포넌트를 사용한 재사용이 가능하고 유지보수의 용이함
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **1. Virtual DOM의 존재**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+기존의 DOM은 페이지가 바뀔 때마다, **새 HTML를 로드하면서 DOM 전체**를 바꾸게 됩니다.
 
-### `npm test`
+Virtual Dom은 React 컴포넌트가 리턴하는 값에 의해 만들어져서 실제 보이고 있는 **DOM과 비교해서 달라진 부분만 찾아내어 바꾸게** 됩니다. 이러한 Virtual DOM 때문에 React에서 컴포넌트 단위의 개발이 가능하게 됩니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(가상 돔을 사용하면 실제 돔 조작의 비용을 최소화하고, 효율적인 업데이트를 가능하게 해줌)
 
-### `npm run build`
+### **2. React Native의 앱 개발 가능**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+웹과 앱은 엄청난 연관이 있습니다. 웹 프로젝트가 끝나 React 하나만 잘 활용하여도 **React Native**로 native moblie app을 만들 수 있기 때문입니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+( native mobile app이란 **안드로이드나 IOS 용으로 나눠서 만들어진 앱으로 각각의 플랫폼에서 제공하는 언어를 이용해서 만들어진 앱)**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **3. 수 많은 커뮤니티**
 
-### `npm run eject`
+개발을 하다보면 막히는 부분, 오류가 있는 부분이 생깁니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Vue에 비해 사용자가 많고**, facebook에서 만들어 계속되는 업데이트와 자료가 굉장히 방대합니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+( Vue.js는 웹 페이지 화면을 개발하기 위한 javascript 프레임워크)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+(어려우면 물어 볼 사람이 많다는 뜻..)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **4. Component 단위 작성**
 
-## Learn More
+**컴포넌트는 UI를 구성하는 개별적인 뷰 단위로 서로서,** UI 개발을 레고라고 한다면, 컴포넌트는 블록 역할을 하게 됩니다. 이러한 블록을 조립해 하나의 완성품을 만드는 것입니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+이러한 컴포넌트들을 나눠놨기에 다른 부분, 또 다른 웹에서 재사용이 가능해집니다. 이는 생산성과 유지 보수를 용이하게 합니다. **브라우저 화면상에 보이는 하나하나의 버튼, 탭, 아이콘 등이 모두 컴포넌트라고 보면 됩니다.** 이 것들이 모여 하나의 뷰(VIEW)를 완성하게 됩니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### React 작동 원리 요약
 
-### Code Splitting
+1. 이벤트 발생: 사용자의 이벤트(버튼 클릭) 등이 발생
+2. 가상 DOM 생성: React는 이벤트에 의해 변경된 상태를 기반으로 가상 DOM을 생성
+3. 컴포넌트 렌더링: React는 JSX 문법을 사용하여 컴포넌트의 UI를 정의하고, 컴포넌트의 상태와 속성을 활용하여 가상 DOM을 구성
+4. 불필요한 DOM 조작 최소화: React는 이전 가상 DOM과 새로운 가상 DOM을 비교하여 변경된 부분을 식별하고, 실제 DOM 조작을 최소화하여 성능을 향상
+5. 실제 DOM 업데이트: React는 변경된 부분을 실제 DOM에 반영하고 이때 변경된 UI가 사용자에게 표시
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<aside>
+💡 중점적으로 공부 해야 할 부분
 
-### Analyzing the Bundle Size
+</aside>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# webmovieapp
+1. 자바스크립트 : 리액트는 자바스크립트의 심화 버전 같은 느낌
+2. JSX
+3. 컴포넌트
+4. 렌더링 리렌더링
+5. useState
+6. 이벤트 작성하는 법
+7. 생명주기
+8. 가상돔
