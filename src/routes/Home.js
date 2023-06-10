@@ -28,7 +28,7 @@ function Home() {
         </div>
       ) : (
         <>
-          <h1 className="intro-text">HIGHLY RATED MOVIES</h1>
+          <h1 className="intro-text">📽️ HIGHLY RATED MOVIES</h1>
           <div className="movie-container">
             {movies.map((movie) => (
               <Movie
