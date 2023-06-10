@@ -21,25 +21,36 @@ function Home() {
   }, []);
 
   return (
-    <div className="movie-container">
+    <div className="home-container">
       {loading ? (
         <div className="loading">
           <h1>Loading...</h1>
         </div>
       ) : (
         <>
-          {movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              coverImg={movie.medium_cover_image}
-              title={movie.title}
-              summary={movie.summary}
-              genres={movie.genres}
-              large_cover_image={movie.large_cover_image}
-              rating={movie.rating}
-            />
-          ))}
+          <h1 className="intro-text">HIGHLY RATED MOVIES</h1>
+          <div className="movie-container">
+            {movies.map((movie) => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                coverImg={movie.medium_cover_image}
+                title={movie.title}
+                summary={movie.summary}
+                genres={movie.genres}
+                large_cover_image={movie.large_cover_image}
+                rating={movie.rating}
+              />
+            ))}
+          </div>
+          <a
+            href="https://www.themoviedb.org/movie/top-rated?language=ko-KR"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="make-text"
+          >
+            🎃 WATCH ANOTHER MOVIE 🎃
+          </a>
         </>
       )}
     </div>

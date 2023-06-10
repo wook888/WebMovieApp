@@ -42,17 +42,6 @@
   box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
 }
 
-.hover-rating {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
 .hover-rating::before {
   content: "⭐️";
   margin-right: 5px;
@@ -80,7 +69,11 @@
   color: white;
   text-decoration: none;
 }
-
-.movie-title:hover {
+.movie-link {
+  color: white;
   text-decoration: none;
+}
+
+.movie-link:hover {
+  text-decoration: underline;
 }
